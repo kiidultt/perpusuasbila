@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #myCarousel {
+                width: 100%;
+                height: 300px;
+            }
+
+            .menu-item {
+                flex: 1 1 45%;
+                margin-bottom: 10px;
+            }
+
+            .menu-container {
+                padding: 15px;
+            }
+
+            .bottom-menu a {
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-item {
+                flex: 1 1 100%;
+                margin-bottom: 10px;
+            }
+
+            .bottom-menu a {
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <center><img src="assets/img/PERPUS UNPAM.jpg" width="200px" height="100px"></center>
+        <h1>Login</h1>
+        <div id="errorMessage" class="error" style="display: none;">Username atau password salah!</div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit"  href="bila.html" onclick="window.location.href='starter-page.html';">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Dummy credentials
+            const validUsername = 'andreasmargate';
+            const validPassword = '123456';
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === validUsername && password === validPassword) {x
+                window.location.href='PAGE PULSA.HTML';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
